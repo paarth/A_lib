@@ -16,24 +16,24 @@ int dp[1005][1005];
 
 void diff(string A,string B,int i,int j)
 {
-  if(i>0&&j>0&&A[i-1]==B[j-1])
+  if(i>0&&j>0&&A[i-1]==B[j-1])  ///if i,j part of LCS ..print it
     {
       diff(A,B,i-1,j-1);
       cout<<" "<<A[i-1];
     }
   else
     {
-      if(j>0&&(i==0||dp[i][j-1]>=dp[i-1][j]))
+      if(j>0&&(i==0||dp[i][j-1]>=dp[i-1][j]))///..if not in B print +B[]
 	{
 	  diff(A,B,i,j-1);
 	  cout<<" +"<<B[j-1];
 	}
-	  else if( i>0 && (j==0||dp[i][j-1]<dp[i-1][j]) )
+      else if( i>0 && (j==0||dp[i][j-1]<dp[i-1][j]) )//..if not in A print -A[]
 	    {
 	      diff(A,B,i-1,j);
 	      cout<<" -"<<A[i-1];
 	    }
-	  else cout<<"";
+      else cout<<"";//........trivial ;)
     } 
   //  cout<<"\n";
 }
@@ -41,13 +41,13 @@ void diff(string A,string B,int i,int j)
 
 string backtrack(string A,string B,int i,int j)
 {
-  if(i==0||j==0)
+  if(i==0||j==0) //...termination 
     return "";
-  else if(A[i-1]==B[j-1])
+  else if(A[i-1]==B[j-1]) //.......if part of LCS..print and cont. backtracking
     {
-      return backtrack(A,B,i-1,j-1)+A[i-1];
+      return backtrack(A,B,i-1,j-1)+A[i-1]; 
     }
-  else
+  else ///.......if not part of LCS route ur backtrack
     {
       if(dp[i][j-1]>dp[i-1][j])
 	return backtrack(A,B,i,j-1);
@@ -108,8 +108,6 @@ int main()
 
   diff(A,B,n,m);
 
-
-
-
+//.....End................
 return 0;
 }
