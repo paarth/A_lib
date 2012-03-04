@@ -14,6 +14,31 @@ int n,m;
 
 int dp[1005][1005];
 
+void diff(string A,string B,int i,int j)
+{
+  if(i>0&&j>0&&A[i-1]==B[j-1])
+    {
+      diff(A,B,i-1,j-1);
+      cout<<" "<<A[i-1];
+    }
+  else
+    {
+      if(j>0&&(i==0||dp[i][j-1]>=dp[i-1][j]))
+	{
+	  diff(A,B,i,j-1);
+	  cout<<" +"<<B[j-1];
+	}
+	  else if( i>0 && (j==0||dp[i][j-1]<dp[i-1][j]) )
+	    {
+	      diff(A,B,i-1,j);
+	      cout<<" -"<<A[i-1];
+	    }
+	  else cout<<"";
+    } 
+  //  cout<<"\n";
+}
+
+
 string backtrack(string A,string B,int i,int j)
 {
   if(i==0||j==0)
@@ -73,13 +98,15 @@ int main()
     }
 //......dp states built ...res in "dp[n][m]"
 
-cout<<"Length of the LCS is : "<<dp[n][m]<<"\n"; 
+  cout<<"Length of the LCS is : "<<dp[n][m]<<"\n"; 
   
+//......Here We do backtracks -> getting us one of the possible LCS  
   
-  
- cout<<"One of the LCs may be : "<<backtrack(A,B,n,m)<<"\n";
+  cout<<"One of the LCs may be : "<<backtrack(A,B,n,m)<<"\n";
 
+//..............diff functioned to get diff printed...
 
+  diff(A,B,n,m);
 
 
 
