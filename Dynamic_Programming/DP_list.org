@@ -1,5 +1,8 @@
 * Dynamic Programming Programs list:
-** TODO LCS
+** DONE LCS
+*** DONE LCS_dp[][]
+*** DONE LCS_backtrack
+*** DONE LCS_diff
 ** TODO LIS
 ** TODO Edit Distance
 ** TODO matrix chain multiplication
