@@ -1,3 +1,13 @@
+/*
+String a transformed to b....
+operations can be perfoemed and respective cost: 
+
+1) addition of a character : ca
+2) Deletion of a character : cd
+3) substitution of a charcter with any character : cs
+//........all costs are constants regardless of the initial and 
+final phase character
+ */
 #include<iostream>
 #include<cstdio>
 #include<map>
