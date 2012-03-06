@@ -3,12 +3,16 @@
 *** DONE LCS_dp[][]
 *** DONE LCS_backtrack
 *** DONE LCS_diff
-** TODO LIS
+**** DONE SAMER08D @SPOJ
+** DONE LIS
 ** TODO Edit Distance
 ** TODO matrix chain multiplication
 ** TODO Knapsack
 ** TODO counting changes
 ** TODO Maximum interval sum
 ** TODO Largest sub-matrix sum
+
+
+
 
 
