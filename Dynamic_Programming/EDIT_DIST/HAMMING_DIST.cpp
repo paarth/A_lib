@@ -1,3 +1,7 @@
+/*
+Hamming distance is the distance between two strings .....
+::   The operations can be performed on those strings can be just "substitution" alone or might be called mutation "parameter-1" alone
+ */
 #include<iostream>
 #include<map>
 #include<set>
