@@ -1,3 +1,7 @@
+///......           O(n)  solution
+
+
+
 #include<iostream>
 #include<map>
 #include<set>
