@@ -11,8 +11,8 @@
 *** DONE Damerau-Levenshtein Distance
     *Jaro-Winkler Distance 
 ** TODO Kadane's Algo
-*** TODO Maximum interval sum 
-*** TODO Largest sub-matrix sum
+*** DONE Maximum Subarray Sum 
+*** DONE Largest sub-matrix sum
 ** TODO matrix chain multiplication
 ** TODO Knapsack
 ** TODO counting changes
