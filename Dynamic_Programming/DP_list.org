@@ -5,15 +5,17 @@
 *** DONE LCS_diff
 **** DONE SAMER08D @SPOJ
 ** DONE LIS
-** TODO Edit Distance
+** DONE Edit Distance
 *** DONE Hamming Distance   
 *** DONE Levenshtein Distance
 *** DONE Damerau-Levenshtein Distance
+    *Jaro-Winkler Distance 
+** TODO Kadane's Algo
+*** TODO Maximum interval sum 
+*** TODO Largest sub-matrix sum
 ** TODO matrix chain multiplication
 ** TODO Knapsack
 ** TODO counting changes
-** TODO Maximum interval sum
-** TODO Largest sub-matrix sum
 
 
 
