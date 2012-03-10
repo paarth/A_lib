@@ -58,7 +58,7 @@ int main()
       for(int j=1;j<=m;j++)
 	{
 
-	  if(a[i]==b[j])
+	  if(a[i-1]==b[j-1])
 	    dp[i][j]=dp[i-1][j-1];
 	  else
 	    {

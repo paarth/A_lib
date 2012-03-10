@@ -6,6 +6,9 @@
 **** DONE SAMER08D @SPOJ
 ** DONE LIS
 ** TODO Edit Distance
+*** DONE Hamming Distance   
+*** DONE Levenshtein Distance
+*** DONE Damerau-Levenshtein Distance
 ** TODO matrix chain multiplication
 ** TODO Knapsack
 ** TODO counting changes
