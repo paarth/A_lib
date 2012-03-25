@@ -5,19 +5,19 @@
 *** DONE LCS_diff
 **** DONE SAMER08D @SPOJ
 ** DONE LIS
+**** DONE MDOLL @spoj
+**** TODO MSTICK @spoj
+**** DONE BABTWR @spoj
 ** DONE Edit Distance
 *** DONE Hamming Distance   
 *** DONE Levenshtein Distance
 *** DONE Damerau-Levenshtein Distance
-    *Jaro-Winkler Distance 
-** TODO Kadane's Algo
-*** DONE Maximum Subarray Sum 
-*** DONE Largest sub-matrix sum
 ** TODO matrix chain multiplication
 ** TODO Knapsack
 ** TODO counting changes
-
-
+** TODO Maximum interval sum
+** TODO Largest sub-matrix 
+* Dynamic programming codechef tutorials(imp. part)
 
 
 
