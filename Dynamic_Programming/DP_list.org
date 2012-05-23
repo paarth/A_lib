@@ -12,11 +12,12 @@
 *** DONE Hamming Distance   
 *** DONE Levenshtein Distance
 *** DONE Damerau-Levenshtein Distance
-** TODO matrix chain multiplication
+** DONE Maximum interval sum
+** DONE Largest sub-matrix 
+** DONE matrix chain multiplication
+**** DONE MIXTURES @spoj
 ** TODO Knapsack
 ** TODO counting changes
-** TODO Maximum interval sum
-** TODO Largest sub-matrix 
 * Dynamic programming codechef tutorials(imp. part)
 
 
