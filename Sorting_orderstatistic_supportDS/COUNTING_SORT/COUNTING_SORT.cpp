@@ -38,8 +38,6 @@ int main()
   for(int i=1;i<e-s+1;i++)
     c[i]=c[i-1]+c[i];
 
-  
-  
   /*    =====
       debug  
       ======
