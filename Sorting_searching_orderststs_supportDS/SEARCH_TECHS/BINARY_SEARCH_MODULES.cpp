@@ -24,6 +24,9 @@ int binary_search(vector<in> arr,int target)
 /* p can be understood as a search query function which might be passed as a pointer
  to a function but used as a function itslef for simplicity and focus on binary search */
 
+
+
+
 //  2) Discrete Binary search 
 
    /* Discrete by nature provides the real power of the binary search:
@@ -49,6 +52,9 @@ int binary_search(int lo.int hi,int* p)
 
   return lo;
 }
+
+
+
 
 
 // 3)Binary search for real numbers:
