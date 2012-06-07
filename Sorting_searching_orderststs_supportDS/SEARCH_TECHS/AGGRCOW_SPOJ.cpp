@@ -12,7 +12,7 @@ using namespace std;
 
 int s[MAX];
 
-int possible(int d,int n,int c)
+int possible(int d,int n,int c) //... Function to check is the given solution is valid
 {
   int cnt=1;
   for(int b=0,i=1;i<n&&cnt<c;i++)
@@ -27,10 +27,10 @@ int possible(int d,int n,int c)
 
 int main()
 {
-  int t;
+  int t;  //  number of test cases
   scanf("%d",&t);
 
-  int n,c;
+  int n,c;   //  number of stalls and count of cows required to be distributed
  
   for(int tt=0;tt<t;tt++)
     {
@@ -42,6 +42,8 @@ int main()
 
       //.....sorting the stall points:
       sort(s,s+n);
+
+      //....  binary search for the optimal soln:
 
       int lo=1,hi=s[n-1]-s[0]+1;
       int mid;
@@ -57,8 +59,6 @@ int main()
 
       printf("%d\n",lo-!possible(lo,n,c));
     }
-
-
 
   return 0;
 }
