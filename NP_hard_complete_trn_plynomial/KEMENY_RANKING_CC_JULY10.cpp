@@ -17,13 +17,14 @@ int temp[16],n,ans[16],d;
 int cost[16][16];
 int dp[1<<16],cur[1<<16];
 
+/* calc(i,k) gives the sum of the costs of the present(in present subsets) candidates being ranked higher than the kth candidate */
 int calc(int mask,int x)
 {
   int ret=0;
 
   for(int i=0;i<n;i++)
     {
-      if(mask & (1<<i))
+      if(mask & (1<<i))  //  for all candidates present in the present subset(mask)
 	{
 	  ret+=cost[i][x];
 	}
