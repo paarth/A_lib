@@ -22,14 +22,24 @@ void process_vertex_early(int pos)
   reachable_ancestor[pos]=pos;
 }
 
+int edge_classification(int x,int y)
+{
+  if(parent[y]==x) return 0; // TREE
+  if(discovered[y] && !processed[y]) return 1; // BACK
+  if(processed[y] && (entry_tim[y]>entry_tim[x])) return 2; //forward
+  if(processed[y] && (entry_tim[y]<entry_tim[x])) return 3; // cross
+}
+
 void process_edge(int x,int y)
-{  
-  if(discovered[y]==false) //...TREE edge
+{
+  int clss=edge_classification(x,y);
+  
+  if(clss==0) //...TREE edge
     {
       tree_out_degree[x]+=1;
     }
-  else if(parent[x]!=y)
-    {
+  else if(parent[x]!=y) // Back
+     {
       if(entry_tim[y]<entry_tim[reachable_ancestor[x]])
 	reachable_ancestor[x]=y;
     }
