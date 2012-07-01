@@ -95,7 +95,7 @@ void dfs(int pos)
       if(discovered[y]==false)  // if the adjacent node is not yet discovered
 	{
 	  parent[y]=pos;    // set its parent as present node
-	  process_edge(pos,y); 
+\	  process_edge(pos,y); 
 	  dfs(y); 
 	}
       else if(!processed[y]) // if the adjacent node is discovered but not yet finished processing 
