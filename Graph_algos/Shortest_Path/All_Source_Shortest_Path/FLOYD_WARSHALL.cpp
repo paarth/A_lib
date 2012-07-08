@@ -42,6 +42,8 @@ int main()
 
   //.....   Input taken :)
 
+
+  /* Simple algorithm of the same fundamental of relaxation of edges: */
   long long through_k;
 
   for(int k=0;k<n;k++)
