@@ -1,10 +1,11 @@
 #include<iostream>
 #include<map>
-#include<cmath>
-#include<climits>
+#include<cstdio>
 #include<algorithm>
 #include<stack>
 #include<queue>
+#include<climits>
+#include<cmath>
 
 using namespace std;
 typedef long long LL;
@@ -42,38 +43,49 @@ LL fun(LL a,LL b,LL c)  // this function gives (a^b)%c taking care of overflow
   prod=mulmod(prod,temp,c);
 }
 
-
-
-bool fermat(LL p,int loop)
+bool miller_rabin(LL p,int loop)
 {
-  if(p==1)  // 1 is not a prime
+  if(p<2)
+    return false;
+  if(p!=2&&p%2==0)
     return false;
 
   srand ( time(NULL) );
 
+  LL s=p-1;
+  while(s%2==0)
+    s/=2;
 
   for(int i=0;i<loop;i++)
     {
-      // Choose a random integer between 1 and p-1 (inclusive)
-      LL a = rand()%(p-1)+1;
-      // fun is the function for modular exponentiation.
-      if(fun(a,p-1,p)!=1)
-	return false;  // pis definitely not prime
+      LL a=rand()%(p-1)+1;
+      LL temp=s;
+      LL mod=fun(a,temp,p);
+
+      while(temp!=p-1 && mod!=1 &&mod!=p-1)
+	{
+	  mod=mulmod(mod,mod,p);
+	  temp*=2;
+	}
+
+      if(mod!=p-1 && temp%2==0)
+	return false;
     }
-  return true;   // p is prime with high probability
+  return true;
 }
 
 int main()
 {
-
   int p;
   cout<<"Enter the no. to be tested (primality test): ";
   cin>>p;
 
-  if(fermat(p,1000))
+  if(miller_rabin(p,1000))
     cout<<"yes "<<p<<" is prime.....   :) \n";
   else
     cout<<"No "<<p<<" is not a prime .....   :( \n"; 
+
+
 
 
   return 0;
