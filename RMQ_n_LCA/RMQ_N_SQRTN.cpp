@@ -1,3 +1,10 @@
+
+/*
+Complexity:     < O(N) , O(sqrt(N)) >
+
+pre-processing time: O(N) 
+query processing time: O(sqrt(N))
+ */
 #include<iostream>
 #include<map>
 #include<cstdio>
