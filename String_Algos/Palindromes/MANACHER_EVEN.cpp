@@ -37,9 +37,9 @@ int main()
       re[i]=j;    // update the max len palin obtained by iterating and checking
       k=1;        // initially go to next index i.e. i+1   (since i+k obtained from i-k)
 
-      while((k<=ro[i])&&(ro[i]-k!=ro[i-k])&&(i>=k))   // while k is in previously found circle of i, the radius of the previous data to be fed is not touching the bigger circle. (there is an anamoly here and thus at this point , the memoized data cannot be used for updating)
+      while((k<=re[i])&&(re[i]-k!=re[i-k])&&(i>=k))   // while k is in previously found circle of i, the radius of the previous data to be fed is not touching the bigger circle. (there is an anamoly here and thus at this point , the memoized data cannot be used for updating)
 	{
-	  ro[i+k]=min(ro[i-k],ro[i]-k);   // min as to make sure , it should be palin.
+	  re[i+k]=min(re[i-k],re[i]-k);   // min as to make sure , it should be palin.
 	  k++;
 	}
 
@@ -53,7 +53,7 @@ int main()
   cout<<"The radii of maximal palindrome with all indices as center:\n";
   for(int i=0;i<n;i++)
     {
-      cout<<"R["<<i<<"]: "<<ro[i]<<"\n";
+      cout<<"R["<<i<<"]: "<<re[i]<<"\n";
     }
 
 
