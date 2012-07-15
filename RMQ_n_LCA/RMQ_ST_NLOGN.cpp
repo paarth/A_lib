@@ -1,3 +1,6 @@
+/*
+Complexity:  < O(NLOGN), O(1) > 
+ */
 #include<iostream>
 #include<map>
 #include<iostream>
@@ -70,8 +73,6 @@ int main()
 
       cout<<"Required value: "<<a[res]<<" And is at: "<<res<<"\n";
     }
-
-
 
 
   return 0;
