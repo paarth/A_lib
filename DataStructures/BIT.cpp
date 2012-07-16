@@ -17,22 +17,22 @@ int tree[MAX];
 int n;
 int a[MAX];
 
-void update(int idx,int val)
+void update(int idx,int val)   // to add value val to index idx
 {
-  while(idx<=MAX)
+  while(idx<=MAX)           // till the max val in range
     {
-      tree[idx]+=val;
-      idx+=(idx&-idx);
+      tree[idx]+=val;   
+      idx+=(idx&-idx);       // get the next binary level i.e. idx&-idx gives the masked bit ,and thus adding gives next level
     }
 }
 
-int read(int idx)
+int read(int idx)       // To read the cumulative frequency of from 1st index to idx
 {
-  int sum=0;
+  int sum=0;           // Initialize sum to zero
   while(idx>0)
     {
-      sum+=tree[idx];
-      idx-=(idx&-idx);
+      sum+=tree[idx];    
+      idx-=(idx&-idx);   // get the previous binary level.  i.e. idx&-idx gives the masked bit and thus subtracting gives the next level
     }
   return sum;
 }
