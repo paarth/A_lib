@@ -1,9 +1,9 @@
-#include<map>
 #include<iostream>
-#include<cstdio>
-#include<vector>
+#include<map>
+#include<stack>
 #include<stack>
 #include<queue>
+#include<algorithm>
 #include<climits>
 #include<cmath>
 
@@ -22,32 +22,46 @@ int f(int n)
   return fa[n];
 }
 
-void floyd(int x0)
+void brent(int x0)
 {
+  int power;
+  int tor,har;  // tor: tortoise   har: hare
+                // search successive powers of two
+ 
+  power=1;
+  lmd=1;
 
-  int tor,har; //tor: tortoise   and har:  hare   
-               // finding a repitition x_mu = x_2mu, hare moves twice as quickly as the tortoise
-
-  tor=f(x0);
-  har=f(f(x0));
+  tor=x0;
+  har=f(x0);
 
   while(tor!=har)
     {
-      tor=f(tor);
-      har=f(f(har));
-      if(har==-1||tor==-1)
+      if(power==lmd)   // time to update power of two by doubling it
+	{
+	  tor=har;
+	  power*=2;
+	  lmd=0;
+	}
+
+      har=f(har);
+      lmd+=1;
+
+      if(har==-1)
 	{
 	  nc=true;
 	  return;
 	}
+
     }
 
-  // at this point the distance of present meeting point from x0 is divisible by the cycle lenth in 
-  // addition the mod od the distance from the start of the cycle, so tortoise made to set at x0
-  //  and both moved one step at a time and thus will meet at the start of the cycle.
 
+  /* Find the position of the first repetition of lenght lambda */
   mu=0;
-  tor=0;
+  tor=x0;
+  har=x0;
+
+  for(int i=0;i<lmd;i++)
+    har=f(har);
 
   while(tor!=har)
     {
@@ -55,24 +69,12 @@ void floyd(int x0)
       har=f(har);
       mu+=1;
     }
-
-  // now when the start of the cycle is also obtained this part pf code finds the lenght of the cycle
-  // so hare moves while tortoise stays and thus meet again after travelling cycle length
-
-  lmd=1;
-  har=f(tor);
-
-  while(tor!=har)
-    {
-      har=f(har);
-      lmd+=1;
-    }
-
 }
 
 
 int main()
 {
+
   int n;
   cout<<"Enter the no. of nodes in the linked list: ";
   cin>>n;
@@ -90,15 +92,13 @@ int main()
   //                              a) mu: distance from start of the start of cycle
   //                              b) lmd: length of the cycle
 
-
-  floyd(0);
+  brent(0);
 
   if(nc)
     cout<<"No cycle detected.... \n";
   else
     cout<<"Thus mu= "<<mu<<" And lemda(lmd)= "<<lmd<<"\n";
-    
-  
-  return 0;
 
+
+  return 0;
 }
