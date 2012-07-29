@@ -38,7 +38,7 @@ void process_edge(int x,int y)
     {
       tree_out_degree[x]+=1;
     }
-  else if(parent[x]!=y) // Back
+  else if(clss==1) // Back
      {
       if(entry_tim[y]<entry_tim[reachable_ancestor[x]])
 	reachable_ancestor[x]=y;
