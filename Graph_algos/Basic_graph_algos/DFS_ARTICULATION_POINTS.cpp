@@ -38,7 +38,7 @@ void process_edge(int x,int y)
     {
       tree_out_degree[x]+=1;
     }
-  else if(parent[x]!=y) // Back
+  else if(clss==1) // Back
      {
       if(entry_tim[y]<entry_tim[reachable_ancestor[x]])
 	reachable_ancestor[x]=y;
@@ -95,7 +95,7 @@ void dfs(int pos)
       if(discovered[y]==false)  // if the adjacent node is not yet discovered
 	{
 	  parent[y]=pos;    // set its parent as present node
-\	  process_edge(pos,y); 
+	  process_edge(pos,y); 
 	  dfs(y); 
 	}
       else if(!processed[y]) // if the adjacent node is discovered but not yet finished processing 
