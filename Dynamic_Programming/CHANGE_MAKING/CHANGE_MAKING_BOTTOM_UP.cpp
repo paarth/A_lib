@@ -2,6 +2,7 @@
 #include<map>
 #include<stack>
 #include<queue>
+#include<algorithm>
 #include<cstdio>
 #include<climits>
 #include<cmath>
@@ -25,7 +26,7 @@ int main()
     }
 
 
-  sort(abegin(),a.end());   //sort all the denominations 
+  sort(a.begin(),a.end());   //sort all the denominations 
 
   int m;
   cout<<"Enter the amount to be made from the given denominations: ";
