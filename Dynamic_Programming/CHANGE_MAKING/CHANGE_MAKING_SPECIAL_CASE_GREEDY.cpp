@@ -38,9 +38,9 @@ int main()
 
   for(int i=n-1;i>=0&&m>0;i--)
     {
-      temp=m/a[i];
-      res+=temp;
-      m-=(temp*a[i]);
+      temp=m/a[i];    // greedily try making the amnt as much as from the biggest denomination
+      res+=temp;   // add those many coins in the result
+      m-=(temp*a[i]);   // get the remaining amnt to be made yet
     }
 
   cout<<"Result= "<<res<<"\n";
