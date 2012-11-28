@@ -1,1 +1,16 @@
-Nothing for now
+1) Basic Maths and Formulas  
+   - summation formulas
+   - Binomial formulas
+
+2) Exponentiation : fast Exponentiation
+
+3) Linear Algebra
+   + Gaussian Elimination
+     - solve a system of linear equations
+     - Inverse a matrix
+     - Find the rank of a matrix
+     - Compute the determinant of a matrix
+   + Cramer's Rule
+
+4) GCD and LCM
+   - Euclidean Algorithm for GCD
